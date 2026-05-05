@@ -13,8 +13,13 @@ final class BladeTablerIconsServiceProvider extends ServiceProvider
     {
         $this->callAfterResolving(Factory::class, function (Factory $factory) {
             $factory->add('tabler', [
-                'path' => __DIR__ . '/../resources/svg',
+                'path' => __DIR__ . '/../resources/svg/outline',
                 'prefix' => 'tabler',
+            ]);
+
+            $factory->add('tabler-filled', [
+                'path' => __DIR__ . '/../resources/svg/filled',
+                'prefix' => 'tabler-filled',
             ]);
         });
     }
