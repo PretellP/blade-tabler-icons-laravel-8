@@ -1,6 +1,12 @@
 <?php
 
-$sourceDir = 'C:\xampp\htdocs\tabler-icons\icons';
+if (!isset($argv[1])) {
+    echo "Usage: php bin/compile.php <path-to-tabler-icons>\n";
+    echo "Example: php bin/compile.php C:\\xampp\\htdocs\\tabler-icons\\icons\n";
+    exit(1);
+}
+
+$sourceDir = rtrim($argv[1], '/\\');
 $destDir = __DIR__ . '/../resources/svg';
 
 if (!is_dir($destDir . '/outline')) {
